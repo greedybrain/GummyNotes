@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
+div.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+div.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #5e5e5e;
+    -webkit-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    -moz-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    min-width: 190px;
+    max-width: 300px;
+    /* position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    height: 100%; */
+}
+
+div.logout,
+div.create,
+div.trash,
+div.settings {
+    align-self: center;
+}
+
+div.logout a i,
+div.create a i,
+div.trash a i,
+div.settings a i {
+    opacity: 1;
+    transition: opacity, ease-in, .5s;
+}
+
+div.logout a i:hover,
+div.create a i:hover,
+div.trash a i:hover,
+div.settings a i:hover {
+    opacity: 0.5;
+}
+
+div.icon-wrappers {
+    text-align: center;
+}
+
+div.icon-wrappers p {
+    color: #fff;
+}
+
+div.glance {
+    min-width: 190px;
+    padding: 25px 0 0 30px;
+    border-right: 1px solid #e9e9e9;
+}
+
+h3.dash {
+    color: #908d90;
+    margin-bottom: 20px;
+}
+
+
+h4.dash {
+    color: #908d90;
+    margin-bottom: 10px;
+}
+
+i.sticky:hover,
+.fa-trash-alt:hover {
+    opacity: 0.7;
+}
+
+div.first-note-wrapper {
+    justify-self: center;
+    min-width: 425px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.all-notes-wrapper {
+    /* justify-self: center; */
+    min-width: 450px;
+    margin: 35px 25px 0 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+div.all-notes-wrapper div.note {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+    -webkit-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    -moz-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    transition: -webkit-box-shadow, -moz-box-shadow, box-shadow, ease-in, .5s;
+    -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    font-family: 'Caveat', cursive;
+}
+
+div.all-notes-wrapper .note:hover {
+    /* -webkit-box-shadow: -1px 10px 15px 2px rgba(110, 110, 110, 0.82);
+    -moz-box-shadow: -1px 10px 15px 2px rgba(110, 110, 110, 0.82);
+    box-shadow: -1px 10px 15px 2px rgba(110, 110, 110, 0.82); */
+    -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+    box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+}
+
+div.all-notes-wrapper .note .note-title {
+    overflow: hidden;
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+
+div.all-notes-wrapper .note .note-title,
+div.all-notes-wrapper .note p.note-content {
+    align-self: center;
+    color: #333;
+    text-shadow: 0px 0px 26px rgb(68, 68, 68);
+}
+
+div.all-notes-wrapper div.note p.note-content {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+div.buttons {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+    padding: 10px;
+}
+
+div.buttons * {
+    padding: 3px;
+    margin: 0 3px;
+    outline: none;
+}
+
+.note-delete,
+.note-edit,
+.note-details {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.note-delete i,
+.note-edit i,
+.note-details i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.note-delete i:hover,
+.note-edit i:hover,
+.note-details i:hover {
+    opacity: 0.7;
+    transform: rotate(10deg);
+}
+
+p.first-note {
+    justify-self: start;
+}
+
+div.placeholder {
+    margin-top: 180px;
+    color: #cfcfcf;
+}
+
+div.placeholder i {
+    font-size: 10rem;
+    transform: rotate(-10deg);
+}
+
+p.first-note a {
+    font-size: 1.3rem;
+    color: #fd5f5f;
+    border: 1px solid #fd5f5f;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: background-color, ease-in, .5s;
+}
+
+p.first-note a:hover {
+    background-color: #fd5f5f;
+    color: #fff;
+}

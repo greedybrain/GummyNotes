@@ -1,0 +1,95 @@
+.show-wrapper {
+    height: 96vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-content {
+    width: 450px;
+    height: 50vh;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    -webkit-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    -moz-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
+    transition: -webkit-box-shadow,
+        -moz-box-shadow,
+        box-shadow,
+        ease-in,
+        .5s;
+    -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+}
+
+.show-content h1 {
+    color: #333;
+}
+
+.show-content p {
+    max-width: 425px;
+}
+
+.show-content h1,
+.show-content p {
+    font-family: 'Caveat', cursive;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.crumble-btn {
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-right: 10px;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity, ease-in, .5s;
+}
+
+.crumble-btn:hover {
+    opacity: .5;
+}
+
+.buttons a {
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333;
+    letter-spacing: 1px;
+    opacity: 1;
+    transition: opacity, ease-in, .5s;
+}
+
+.buttons a:hover {
+    opacity: .5;
+}
+
+div.nav {
+    height: 4vh;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+}
+
+div.nav a {
+    color: #8a8a8a;
+    transition: color, ease-in, .5s;
+}
+
+div.nav a:hover {
+    color: #bbbbbb;
+}

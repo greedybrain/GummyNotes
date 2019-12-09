@@ -1,0 +1,24 @@
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/show_styles.css") %>"/>
+</head>
+<body>
+<div class="nav">
+    <a href="/account/home"><i class="fas fa-home fa-2x"></i></a>
+    <a href="/logout" class="create-logout">Log Out</a>
+</div>
+
+<div class="show-wrapper">
+
+    <div class="show-content" style="border: 1px solid <%= @color %>; background-color: <%= @color %>">
+        <h1><%= @note.title %></h1>
+        <p><%= @note.content %></p>
+        <form action="/account/notes/<%= @note.id %>" method="POST">
+
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <div class="buttons">
+                <button class="crumble-btn" type="submit">Crumble</button>
+                <a href="/account/notes/<%= @note.id %>/edit">Edit</a>
+            </div>
+        </form>
+    </div>
+
+</div>

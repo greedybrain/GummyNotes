@@ -1,0 +1,29 @@
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/signup_styles.css") %>"/>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="form-info">
+        <h1><a href="/"><span class="green">GUMMY</span> <span class="blue">NOTES</span></a></h1>
+        <h1>Welcome Back!</h1>
+        <% if @user.nil? %>
+            <p style="<%= @fail_styles %>"><%= @fail_msg %></p>
+        <% end %>
+        <form class action="/login" method="POST">
+            <fieldset class="input-wrapper">
+                <i class="fas fa-user form-icons"></i>
+                <input id="username" type="text" name="username" placeholder="Username" required>
+            </fieldset><br>
+
+            <fieldset class="input-wrapper">
+                <i class="fas fa-lock form-icons"></i>
+                <input id="password" type="password" name="password" placeholder="Password" required>
+            </fieldset>
+
+            <button style="outline: none;" type="submit">Login</button>
+        </form>
+        <p>New user? <span class="login"><a href="/signup">Sign Up</a></span></p>
+    </div>
+
+</div>

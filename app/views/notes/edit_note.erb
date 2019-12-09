@@ -1,0 +1,54 @@
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/create_styles.css") %>"/>
+</head>
+<body>
+
+<div class="nav">
+    <a href="/account/home"><i class="fas fa-home fa-2x"></i></a>
+    <a href="/logout" class="create-logout">Log Out</a>
+</div>
+
+<div class="create-wrapper">
+    <div class="form-info">
+        <h1><a href="/account/home"><span class="green">GUMMY</span> <span class="blue">NOTES</span></a></h1>
+        <form action="/account/notes/<%= @note.id %>" method="POST">
+            <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <fieldset class="input-wrapper">
+                <i class="fas fa-heading form-icons"></i>
+                <input type="text" name="title" value="<%= @note.title %>" required>
+            </fieldset><br><br>
+            <fieldset class="ta-wrapper">
+                <i class="fas fa-pencil-alt form-icons"></i>
+                <textarea rows="7" name="content" id="content" maxlength="400" style="resize: none;"><%= @note.content %></textarea>
+            </fieldset>
+
+            <div class="color-picker">
+                
+                <div class="yellow">
+                    <input type="radio" id="yellow" name="color" value="#fff238">
+                    <label for="yellow" style="color: #fff238;">Yellow</label>
+                </div>
+
+                <div class="blue">
+                    <input type="radio" id="blue" name="color" value="#00d6ff">
+                    <label for="blue" style="color: #00d6ff;">Blue</label>
+                </div>
+
+                <div class="green">
+                    <input type="radio" id="green" name="color" value="#98e203">
+                    <label for="green" style="color: #98e203;">Green</label>
+                </div>
+
+                <div class="pink">
+                    <input type="radio" id="pink" name="color" value="#fc6fe4">
+                    <label for="pink" style="color: #fc6fe4;">Pink</label>
+                </div>
+
+            </div>
+
+            <button type="submit">Finished</button>
+        </form>
+    
+    </div>
+</div>
+
+            

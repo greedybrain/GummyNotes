@@ -1,0 +1,61 @@
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/dashboard_styles.css") %>"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="glance">
+        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= current_user.name %></h3>
+        <% if current_user.gummy_notes.empty? %>
+            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
+            <h4 class="dash"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i> Trash Empty</h4>
+        <% else %>
+            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
+            <h4 class="dash"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i> Trash Empty </h4>
+        <% end %>
+        
+    </div>
+    <% if @notes.empty? %>
+        <div class="first-note-wrapper">
+            <p class="first-note"><a href="/account/notes/new">Create your first Gummy Note now</a></p>
+            <div class="placeholder">
+                <i class="fas fa-sticky-note"></i>
+            </div>
+        </div>
+    <% else %>
+        <div class="all-notes-wrapper">
+            <% @notes.each do |note| %>
+                <div class="note" style="border:1px solid <%= note.color %>; background-color: <%= note.color %>">
+                    <% if note.title.length > 20 %>
+                        <h1 class="note-title"><%= note.title[0..15] %>...</h1>
+                    <% else %>
+                        <h1 class="note-title"><%= note.title %></h1>
+                    <% end %>
+                    <% if note.content.length > 100 %>
+                        <p class="note-content"><%= note.content[0, 100] %>...</p>
+                    <% else %>
+                        <p class="note-content"><%= note.content %></p>
+                    <% end %>
+                    <div class="buttons">
+                        <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
+                        <a class="btn" href="/account/notes/<%= note.id %>/edit"><button class="note-edit"><i class="fas fa-pencil-alt form-icons"></i></button></a>
+                    
+                        <form action="/account/notes/<%= note.id %>"method="POST">
+                            <input id="hidden"type="hidden"name="_method"value="DELETE">
+                            <button class="note-delete btn"type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            <% end %> 
+        </div>
+    <% end %> 
+    
+    <div class="nav">
+        <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-3x" style="color: #f0c400"></i></a></div>
+        <div class="settings icon-wrappers"><p>Settings</p><br><a href="#"><i class="fas fa-cog fa-3x" style="color: #98e203"></i></a></div>
+        <div class="create icon-wrappers"><p>New</p><br><a href="/account/notes/new"><i class="fas fa-plus-circle fa-3x" style="color: #00ccff;"></i></a></div>
+        <div class="trash icon-wrappers"><p>Trash</p><br><a href="#"><i class="fas fa-trash-alt fa-3x" style="color: #fff"></i></a></div>
+    </div>
+
+</div>
+
+<%# <br><a href="/account/notes/new">Create New Note</a> %>
+<%# <br><a href="/logout">Log Out</a> %>

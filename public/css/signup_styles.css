@@ -1,0 +1,94 @@
+a {
+  color: #fff;
+}
+
+div.wrapper {
+  height: 100vh;
+  background-image: url("../images/board-background.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 span.green {
+  color: #98e203;
+}
+
+h1 span.blue {
+  color: #03ccf0;
+}
+
+div.form-info {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 50px 60px;
+  color: #fff;
+  width: 400px;
+  border: 0;
+}
+
+div.form-info h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.form-info .input-wrapper {
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  background-color: #a7a7a7;
+}
+
+.form-icons {
+  color: #fff;
+  float: left;
+  text-align: center;
+  font-size: 1.4rem;
+  position: relative;
+  left: 10px;
+  top: 8px;
+}
+
+div.form-info form input {
+  height: 40px;
+  width: 85%;
+  outline: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #cecbcb;
+  float: right;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+div.form-info button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color, ease-in, 0.5s;
+  margin: 20px 0 10px 0;
+  outline: none;
+}
+
+div.form-info button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+div.form-info p {
+  text-align: center;
+}
+
+span.login a {
+  color: #fff;
+  text-decoration: underline;
+}
