@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
-
 div.wrapper {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    /* color: #d35bbf; */
+    background-color: #ffd08e;
 }
 
 div.nav {
@@ -88,6 +88,7 @@ div.all-notes-wrapper {
     /* justify-self: center; */
     min-width: 450px;
     margin: 35px 25px 0 25px;
+    padding-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
     grid-auto-rows: 200px;
@@ -99,14 +100,15 @@ div.all-notes-wrapper div.note {
     flex-direction: column;
     padding: 15px;
     position: relative;
-    -webkit-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
-    -moz-box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
-    box-shadow: 0px 7px 28px -6px rgba(120, 120, 120, 1);
     transition: -webkit-box-shadow, -moz-box-shadow, box-shadow, ease-in, .5s;
     -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
     box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
     font-family: 'Caveat', cursive;
+    -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+
 }
 
 div.all-notes-wrapper .note:hover {
@@ -164,13 +166,15 @@ div.buttons * {
 .note-details i {
     font-size: 1rem;
     color: #fff;
+    transform: rotate(0deg);
+    transition: transform, ease-in, .5s;
 }
 
 .note-delete i:hover,
 .note-edit i:hover,
 .note-details i:hover {
-    opacity: 0.7;
-    transform: rotate(10deg);
+    /* opacity: 0.7; */
+    transform: rotate(360deg);
 }
 
 p.first-note {

@@ -1,13 +1,14 @@
 require_relative "../models/user"
 require_relative "../models/gummy_note"
+require_relative "../models/trash"
 
 
 class ApplicationController < Sinatra::Base
 
     configure do 
         set :views, "app/views"
-        enable(:sessions)
-        set(:session_secret, "s7y7n7t7a7x7t7i7c")
+        enable :sessions
+        set :session_secret, "s7y7n7t7a7x7t7i7c"
     end
 
     # HOME PAGE SIGNUP/LOGIN/ETC
@@ -17,6 +18,15 @@ class ApplicationController < Sinatra::Base
             redirect "/account/home"
         else
             erb :index # renders signup/login page
+        end
+    end
+
+    # SETTINGS PAGE 
+    get "/account/settings" do 
+        if logged_in?
+            erb :"/help/settings"
+        else
+            redirect "/"
         end
     end
 
@@ -32,10 +42,11 @@ class ApplicationController < Sinatra::Base
         if user_already_exists? || email_already_exists?
             erb :'/registrations/signup'
         else
-            user = User.create(name: params[:name], username: params[:username].downcase, email: params[:email].downcase, password: params[:password])
+            @user = User.create(name: params[:name], username: params[:username].downcase, email: params[:email].downcase, password: params[:password])
+            assigned_trash_can(@user)
 
-            if user
-                session[:username] = user.username
+            if @user
+                session[:username] = @user.username
                 redirect "/account/home"
             else
                 redirect '/'
@@ -62,8 +73,6 @@ class ApplicationController < Sinatra::Base
             session[:username] = @user.username
             redirect '/account/home'
         else
-            @fail_msg = could_not_find_user
-            @fail_styles = "color: red; background-color: #fff; border-radius: 5px; margin-bottom: 10px; padding: 10px 0; font-size: 0.8rem"
             erb :'/sessions/login'
         end
     end
@@ -86,6 +95,16 @@ class ApplicationController < Sinatra::Base
     end
 
     # END OF "DESTROY" AREA ==========
+
+    # DELETE ACCOUNT PERMANENTLY
+
+    delete "/logout" do
+        user = User.find_by_id(current_user.id)
+        session.clear
+        user.delete
+        user.gummy_notes.delete_all
+        redirect "/login"
+    end
     
     # HELPER METHODS ==========
 
@@ -106,8 +125,11 @@ class ApplicationController < Sinatra::Base
             User.all.collect{|user| user.email}.include?(params[:email])
         end
 
-        def could_not_find_user
-            "Account doesn't exist, check your username and/or password"
+        def assigned_trash_can(user) 
+            trash_can = Trash.create 
+            user.trash = trash_can
+            trash_can.user = user
+            trash_can
         end
 
     end

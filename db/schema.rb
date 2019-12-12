@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_195643) do
+ActiveRecord::Schema.define(version: 2019_12_10_152114) do
 
   create_table "gummy_notes", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "user_id"
     t.string "color"
+    t.integer "trash_id"
   end
 
-  create_table "trash_cans", force: :cascade do |t|
+  create_table "trashes", force: :cascade do |t|
     t.integer "user_id"
   end
 

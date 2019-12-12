@@ -22,6 +22,7 @@ class GummyNoteController < ApplicationController
     # READ/SHOW ACTION
     get "/account/notes/:id" do |id|
         @note = GummyNote.find_by_id(id)
+        @color = @note.color
         show(@note)
     end
 
@@ -40,7 +41,13 @@ class GummyNoteController < ApplicationController
     # DESTROY/DELETE ACTION    
     delete "/account/notes/:id" do |id|
         @note = GummyNote.find_by_id(id)
-        crumble(@note)
+        @note.trash = current_user.trash
+        # @note.trash = assigned_trash_can(current_user)
+        @note.trash.gummy_notes << @note
+        @note.trash.save
+        @note.user = nil
+        @note.save
+        redirect "/account/home"
     end
 
 # =============== HELPER METHODS ====================
@@ -56,7 +63,7 @@ class GummyNoteController < ApplicationController
 
     def create(note) 
         note = GummyNote.find_by(id: params[:id])
-        show(note)
+        redirect "/account/home"
     end
 
     # if confirmed, then create a note
@@ -74,12 +81,16 @@ class GummyNoteController < ApplicationController
 
     # if users note then show note details
     def show(note)
-        erb :'/notes/show_note'
+        erb :"/notes/show_note"
     end
 
     # if users note then allow user to edit it
     def edit(note)
-        note_belongs_to_user?(note) ? erb(:'/notes/edit_note') : redirect('/account/home')
+        if note_belongs_to_user?(note)
+             erb :"/notes/edit_note"
+        else
+            redirect('/account/home')
+        end
     end
     
     # if users note then push edit
@@ -90,16 +101,12 @@ class GummyNoteController < ApplicationController
             note.content = params[:content]
             note.color = params[:color]
             note.save
-            show(note)
-        end
-    end
-
-    # if users note then allow them to delete it
-    def crumble(note) 
-        if note_belongs_to_user?(note)
-            note.delete
             redirect "/account/home"
         end
     end
+
+    # def garbage_collection
+    #     # assigned_trash_can(current_user).gummy_notes
+    # end
 
 end

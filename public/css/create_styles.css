@@ -1,19 +1,77 @@
 div.create-wrapper {
-    height: 96vh;
-    background-image: linear-gradient(to right, #00ccff, #6ee2ff);
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/create_image.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+div.nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    background-color: #5e5e5ec9;
+    -webkit-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    -moz-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+    min-width: 190px;
+    max-width: 300px;
+    /* position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    height: 100%; */
+}
+
+div.home,
+div.logout,
+div.create,
+div.trash,
+div.settings {
+    align-self: center;
+}
+
+div.logout a i {
+    transform: rotate(-180deg);
+}
+
+div.home a i,
+div.logout a i,
+div.create a i,
+div.trash a i,
+div.settings a i {
+    opacity: 1;
+    transition: opacity, ease-in, .5s;
+}
+
+div.home a i:hover,
+div.logout a i:hover,
+div.settings a i:hover,
+div.trash a i:hover {
+    opacity: 0.7;
+}
+
+div.icon-wrappers {
+    text-align: center;
+}
+
+div.icon-wrappers p {
+    color: #fff;
 }
 
 div.form-info {
-    background-color: #3b3b3b66;
+    /* background-color: #3b3b3b66; */
     border-radius: 10px;
     padding: 50px 60px;
     color: #fff;
     width: 400px;
+    height: 75vh;
     border: 0;
+    align-self: center;
+    justify-self: center;
 }
 
 div.form-info .input-wrapper {
@@ -60,7 +118,7 @@ div.form-info form textarea {
     font-size: 1rem;
 }
 
-div.form-info h1 {
+div.form-info h2 {
     margin-bottom: 20px;
     text-align: center;
 }
@@ -75,12 +133,16 @@ div.form-info h1 {
     top: 8px;
 }
 
-h1 span.green {
+h2 span.green {
     color: #98e203;
 }
 
-h1 span.blue {
+h2 span.blue {
     color: #03ccf0;
+}
+
+h2 span.pink {
+    color: #d35bbf;
 }
 
 .input-wrapper {
@@ -110,34 +172,7 @@ div.form-info button:hover {
     color: #98e203;
 }
 
-div.nav {
-    background-image: linear-gradient(to right, #00ccff, #6ee2ff);
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 30px 0;
-    height: 4vh;
-}
-
-.fa-home {
-    color: #fff;
-    transition: color, ease-in, .7s;
-}
-
-.fa-home:hover {
-    color: #98e203;
-}
-
-.create-logout {
-    font-size: 1.2rem;
-    color: #fff;
-    transition: color, ease-in, .7s;
-}
-
-.create-logout:hover {
-    color: #caff61;
-}
-
 div.color-picker {
     display: flex;
-    border: 1px solid red;
+    justify-content: space-around;
 }

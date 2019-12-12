@@ -1,14 +1,18 @@
 .show-wrapper {
-    height: 96vh;
-    background: #fff;
+    height: 100vh;
+    /* background: #fff; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background-image: url("../images//bulletin_board.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
 }
 
 .show-content {
-    width: 450px;
+    width: 400px;
     height: 50vh;
     padding: 20px;
     display: grid;
@@ -37,6 +41,7 @@
 .show-content h1,
 .show-content p {
     font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
 }
 
 .buttons {
@@ -75,21 +80,4 @@
 
 .buttons a:hover {
     opacity: .5;
-}
-
-div.nav {
-    height: 4vh;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20px 0;
-}
-
-div.nav a {
-    color: #8a8a8a;
-    transition: color, ease-in, .5s;
-}
-
-div.nav a:hover {
-    color: #bbbbbb;
 }

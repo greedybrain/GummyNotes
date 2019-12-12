@@ -2,50 +2,59 @@
 </head>
 <body>
 
-<div class="nav">
-    <a href="/account/home"><i class="fas fa-home fa-2x"></i></a>
-    <a href="/logout" class="create-logout">Log Out</a>
-</div>
-
 <div class="create-wrapper">
+
+    <div class="nav">
+        <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-2x" style="color: #f0c400"></i></a></div>
+        <div class="home icon-wrappers"><p>Home</p><br><a href="/account/home"><i class="fas fa-home fa-2x" style="color: #d35bbf;"></i></a></div>
+        <div class="settings icon-wrappers"><p>Settings</p><br><a href="/account/settings"><i class="fas fa-cog fa-2x" style="color: #98e203"></i></a></div>
+        <div class="create icon-wrappers"><p>New</p><br><a><i class="fas fa-plus fa-8x" style="color: #00ccff;"></i></a></div>
+        <div class="trash icon-wrappers"><p>Trash</p><br><a href="/account/trash/notes"><i class="fas fa-trash-alt fa-2x" style="color: #fff"></i></a></div>
+    </div>
+
     <div class="form-info">
-        <h1><a href="/account/home"><span class="green">GUMMY</span> <span class="blue">NOTES</span></a></h1>
+        <h2><span class="green">Are you</span> <span class="pink">'Editing' or</span> <span class="blue">Procrastinating?</span></h2>
         <form action="/account/notes/<%= @note.id %>" method="POST">
-            <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <input id="hidden"type="hidden"name="_method"value="PATCH">
             <fieldset class="input-wrapper">
                 <i class="fas fa-heading form-icons"></i>
-                <input type="text" name="title" value="<%= @note.title %>" required>
+                <input id="title" type="text" name="title" placeholder="Note Title" value="<%= @note.title %>" required>
             </fieldset><br><br>
             <fieldset class="ta-wrapper">
                 <i class="fas fa-pencil-alt form-icons"></i>
-                <textarea rows="7" name="content" id="content" maxlength="400" style="resize: none;"><%= @note.content %></textarea>
+                <textarea rows="7" name="content" id="content" maxlength="400" style="resize: none;" placeholder="Note Content"><%= @note.content %></textarea>
             </fieldset>
 
             <div class="color-picker">
                 
                 <div class="yellow">
-                    <input type="radio" id="yellow" name="color" value="#fff238">
-                    <label for="yellow" style="color: #fff238;">Yellow</label>
+                    <input type="radio" id="yellow" name="color" value="#fff238" required>
+                    <label for="yellow" style="color: #fff238;">Y</label>
                 </div>
 
                 <div class="blue">
-                    <input type="radio" id="blue" name="color" value="#00d6ff">
-                    <label for="blue" style="color: #00d6ff;">Blue</label>
+                    <input type="radio" id="blue" name="color" value="#00d6ff" required>
+                    <label for="blue" style="color: #00d6ff;">B</label>
+                </div>
+
+                <div class="red">
+                    <input type="radio" id="red" name="color" value="#fd5f5f" required>
+                    <label for="red" style="color: #fd5f5f;">R</label>
                 </div>
 
                 <div class="green">
-                    <input type="radio" id="green" name="color" value="#98e203">
-                    <label for="green" style="color: #98e203;">Green</label>
+                    <input type="radio" id="green" name="color" value="#98e203" required>
+                    <label for="green" style="color: #98e203;">G</label>
                 </div>
 
                 <div class="pink">
-                    <input type="radio" id="pink" name="color" value="#fc6fe4">
-                    <label for="pink" style="color: #fc6fe4;">Pink</label>
+                    <input type="radio" id="pink" name="color" value="#fc6fe4" required>
+                    <label for="pink" style="color: #fc6fe4;">P</label>
                 </div>
 
             </div>
 
-            <button type="submit">Finished</button>
+            <button type="submit">Post Note</button>
         </form>
     
     </div>

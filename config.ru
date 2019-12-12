@@ -6,6 +6,7 @@ begin
 	
 	use Rack::MethodOverride
 	
+	use TrashController
 	use GummyNoteController
 	run ApplicationController # or whatever the app controller module/class name you want eg. App
 rescue ActiveRecord::PendingMigrationError => err

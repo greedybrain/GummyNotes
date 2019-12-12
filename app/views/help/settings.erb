@@ -1,0 +1,25 @@
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/settings_styles.css") %>"/>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="nav">
+        <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-2x" style="color: #f0c400"></i></a></div>
+        <div class="home icon-wrappers"><p>Home</p><br><a href="/account/home"><i class="fas fa-home fa-2x" style="color: #d35bbf;"></i></a></div>
+        <div class="settings icon-wrappers"><p>Settings</p><br><a>
+            <i class="fas fa-cog fa-8x" style="color: #98e203;"></i></a>
+        </div>
+        <div class="create icon-wrappers"><p>New</p><br><a href="/account/notes/new"><i class="fas fa-plus fa-2x" style="color: #00ccff;"></i></a></div>
+        <div class="trash icon-wrappers"><p>Trash</p><br><a href="/account/trash/notes"><i class="fas fa-trash-alt fa-2x" style="color: #fff"></i></a></div>
+    </div>
+
+    <div class="delete-account">
+        <form action="/logout" method="POST">
+
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <button> <i class="fas fa-user-minus"></i>Delete Account</button>
+        </form>
+    </div>
+
+</div>
