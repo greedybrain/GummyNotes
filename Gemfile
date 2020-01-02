@@ -9,13 +9,13 @@ gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
 gem 'sass'
+gem 'sqlite3'
 
 group :development do
 	gem 'capybara'
 	gem 'shotgun'
 	gem 'pry'
 	gem 'tux'
-	gem 'sqlite3'
 end
 
 group :production do 
