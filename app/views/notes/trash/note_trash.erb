@@ -1,17 +1,50 @@
-    <link rel="stylesheet" type="text/css" href="<%= url("/css/trash_styles.css") %>"/>
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/sass/settings_styles.css") %>"/>
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/sass/trash_styles.css") %>"/>
 </head>
 <body>
 
-<div class="trash-wrapper">
+<div class="wrapper">
 
     <div class="nav">
         <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-2x" style="color: #f0c400"></i></a></div>
         <div class="home icon-wrappers"><p>Home</p><br><a href="/account/home"><i class="fas fa-home fa-2x" style="color: #d35bbf;"></i></a></div>
-        <div class="settings icon-wrappers"><p>Settings</p><br><a href="/account/settings"><i class="fas fa-cog fa-2x" style="color: #98e203"></i></a></div>
-        <div class="create icon-wrappers"><p>New</p><br><a><i class="fas fa-plus fa-2x" style="color: #00ccff;"></i></a></div>
-        <div class="trash icon-wrappers"><p>Trash</p><br><a href="/account/trash/notes"><i class="fas fa-trash-alt fa-8x" style="color: #333"></i></a></div>
+        <div class="settings icon-wrappers"><p>Settings</p><br><a>
+            <i class="fas fa-cog fa-2x" style="color: #98e203;"></i></a>
+        </div>
+        <div class="create icon-wrappers"><p>New</p><br><a href="/account/notes/new"><i class="fas fa-plus fa-2x" style="color: #00ccff;"></i></a></div>
+        <div class="trash icon-wrappers"><p>Trash</p><br><a href="/account/trash/notes"><i class="fas fa-trash-alt fa-8x" style="color: #fff"></i></a></div>
     </div>
 
-
-
+    <div class="all-notes-wrapper">
+        <% current_user.trash.gummy_notes.reverse.each do |note| %>
+            <div class="note" style="background-color: <%= note.color %>">
+                <% if note.title.length > 10 %>
+                    <h1 class="note-title"><%= note.title[0..10] %>...</h1>
+                <% else %>
+                    <h1 class="note-title"><%= note.title %></h1>
+                <% end %>
+                <% if note.content.length > 100 %>
+                    <p class="note-content"><%= note.content[0, 100] %>...</p>
+                <% else %>
+                    <p class="note-content"><%= note.content %></p>
+                <% end %>
+                <div class="buttons">
+                    <form action="/account/notes/<%= note.id %>"method="POST">
+                        <div class="hover">
+                            <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
+                            <div class="over">
+                                <button class="note-restore btn"type="submit"><i class="fas fa-trash-restore form-icons"></i></button>
+                                <p class="restore-tooltip">Restore Note</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        <% end %>
+    </div>
+    <form action="/account/notes/trash" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <button class="delete" style="color: #fff;">Empty Trash Can</button>
+    </form>
 </div>

@@ -7,19 +7,13 @@
     <div class="form-info">
         <h1><a href="/"><span class="green">GUMMY</span> <span class="blue">NOTES</span></a></h1>
         <h1>Get Sticking!</h1>
-        <% if user_already_exists? %>
-            <p style="color: red; background-color: #fff; border-radius: 5px; margin-bottom: 10px; padding: 10px 0; font-size: 0.8rem">That username is already taken</p>
-        <% end %>
-        <% if email_already_exists? %>
-            <p style="color: red; background-color: #fff; border-radius: 5px; margin-bottom: 10px; padding: 10px 0; font-size: 0.8rem">That email address is already in use</p>
-        <% end %>
         <form class="signup-form" action="/signup" method="POST">
             
             <fieldset class="input-wrapper">
                 <i class="fas fa-signature form-icons"></i>
                 <input id="name" type="text" name="name" placeholder="Full Name" required>
             </fieldset><br>
-
+            
             <fieldset class="input-wrapper">
                 <i class="fas fa-user form-icons"></i>
                 <input id="username" type="text" name="username" placeholder="Create Username" required>

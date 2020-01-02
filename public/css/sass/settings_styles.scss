@@ -1,0 +1,84 @@
+div.wrapper {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../images/settings_image.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    div.nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #5e5e5ec9;
+        -webkit-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        -moz-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        min-width: 190px;
+        max-width: 300px;
+
+        div.home,
+        div.logout,
+        div.create,
+        div.trash,
+        div.settings {
+            align-self: center;
+
+            a i {
+                opacity: 1;
+                transition: opacity, ease-in, .5s;
+            }
+        }
+
+        div.home a i:hover,
+        div.logout a i:hover,
+        div.create a i:hover,
+        div.trash a i:hover {
+            opacity: 0.7;
+        }
+
+        div.logout a i {
+            transform: rotate(-180deg);
+        }
+
+        div.icon-wrappers {
+            text-align: center;
+
+            p {
+                color: #fff;
+            }
+        }
+    }
+
+    div.delete-account {
+        align-self: center;
+        justify-self: center;
+
+        button {
+            font-size: 1.3rem;
+            color: #fff;
+            border: 0;
+            padding: 20px 30px;
+            border-radius: 50px;
+            background-color: #ff0000;
+            transition: background-color, ease-in, .7s;
+            width: 400px;
+            cursor: pointer;
+            outline: none;
+
+            &:hover {
+                border: 0;
+                -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+                -moz-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+                box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+            }
+
+            i {
+                margin-right: 20px;
+            }
+        }
+
+    }
+}

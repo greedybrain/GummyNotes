@@ -1,0 +1,175 @@
+div.wrapper {
+    // height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../images/trash.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    div.nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #5e5e5ec9;
+        -webkit-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        -moz-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        min-width: 190px;
+        max-width: 300px;
+
+        div.home,
+        div.logout,
+        div.create,
+        div.trash,
+        div.settings {
+            align-self: center;
+
+            a i {
+                opacity: 1;
+                transition: opacity, ease-in, .5s;
+            }
+        }
+
+        div.home a i:hover,
+        div.logout a i:hover,
+        div.create a i:hover {
+            opacity: 0.7;
+        }
+
+        div.logout a i {
+            transform: rotate(-180deg);
+        }
+
+        div.icon-wrappers {
+            text-align: center;
+
+            p {
+                color: #fff;
+            }
+        }
+    }
+
+    div.all-notes-wrapper {
+        min-width: 450px;
+        margin: 35px 25px 0 25px;
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+        grid-auto-rows: 200px;
+        gap: 20px;
+
+        div.note {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            position: relative;
+            -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+            -moz-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+            box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+            font-family: 'Caveat', cursive;
+            -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+            transition: -webkit-box-shadow,
+                -moz-box-shadow,
+                box-shadow,
+                ease-in,
+                1s;
+
+            &:hover {
+                -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+                -moz-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+                box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+            }
+
+            .note-title {
+                overflow: hidden;
+                font-size: 1.7rem;
+                text-decoration: underline;
+            }
+
+            .note-title,
+            p.note-content {
+                align-self: center;
+                color: #333;
+                text-shadow: 0px 0px 26px rgb(68, 68, 68);
+            }
+
+            p.note-content {
+                margin-top: 15px;
+                font-size: 1.2rem;
+            }
+
+            div.buttons {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                align-self: center;
+                padding: 10px;
+
+                * {
+                    padding: 3px;
+                    margin: 0 3px;
+                    outline: none;
+                }
+
+                form button.note-restore,
+                a button.note-edit,
+                a button.note-details {
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                i {
+                    font-size: 1.5rem;
+                    color: #fff;
+                    transform: rotate(0deg);
+                    transition: transform, ease-in, .7s;
+
+                    &:hover {
+                        transform: rotate(360deg);
+                    }
+                }
+
+            }
+
+            p.restore-tooltip {
+                display: none;
+                width: 100px;
+                position: absolute;
+                font-size: .9rem;
+                z-index: 100;
+                border: 1px solid #333;
+                text-align: center;
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: #333;
+                background-color: #fff;
+                transition: background-color, color, ease-in, .5s;
+            }
+
+            div.over {
+                display: inline-block;
+                padding: 0;
+            }
+
+            div.hover .over:hover {
+                p.restore-tooltip {
+                    display: inline-block;
+                    color: #fff;
+                    background-color: #333;
+                }
+            }
+
+        }
+    }
+
+    button.delete {
+        padding: 10px 20px;
+        color: #333;
+        position: fixed;
+    }
+}

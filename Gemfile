@@ -8,6 +8,7 @@ gem 'sinatra-activerecord'
 gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
+gem 'sass'
 
 group :development do
 	gem 'capybara'
@@ -15,4 +16,8 @@ group :development do
 	gem 'pry'
 	gem 'tux'
 	gem 'sqlite3', '~> 1.3.6'
+end
+
+group :production do 
+	gem 'pg'
 end

@@ -1,20 +1,28 @@
-    <link rel="stylesheet" type="text/css" href="<%= url("/css/dashboard_styles.css") %>"/>
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/sass/dashboard_styles.css") %>"/>
 </head>
 <body>
 <div class="wrapper">
     <div class="glance">
+        <div class="menu_btn">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
         <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= current_user.name %></h3>
-        <% if current_user.gummy_notes.empty? %>
-            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
-        <% else %>
-            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
-        <% end %>
+        <div class="stats">
+        
+            <% if current_user.gummy_notes.empty? %>
+                <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
+            <% else %>
+                <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
+            <% end %>
 
-        <% if current_user.trash.gummy_notes.empty? %>
-            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> Trash Empty </h4>
-        <% else %>
-            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= current_user.trash.gummy_notes.length %> </h4>
-        <% end %>
+            <% if current_user.trash.gummy_notes.empty? %>
+                <h4 class="dash trash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> Trash Empty </h4>
+            <% else %>
+                <h4 class="dash trash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= current_user.trash.gummy_notes.length %> </h4>
+            <% end %>
+        </div>
         
     </div>
     <% if current_user.gummy_notes.empty? %>
@@ -25,6 +33,7 @@
             </div>
         </div>
     <% else %>
+        
         <div class="all-notes-wrapper">
             <% current_user.gummy_notes.reverse.each do |note| %>
                 <div class="note" style="background-color: <%= note.color %>">
@@ -53,6 +62,9 @@
     <% end %> 
     
     <div class="nav">
+        <div class="exit">
+            <i class="fas fa-times fa-2x"></i>
+        </div>
         <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-2x" style="color: #f0c400"></i></a></div>
         <div class="home icon-wrappers"><p>Home</p><br><a><i class="fas fa-home fa-8x" style="color: #d35bbf;"></i></a></div>
         <div class="settings icon-wrappers"><p>Settings</p><br><a href="/account/settings"><i class="fas fa-cog fa-2x" style="color: #98e203"></i></a></div>
@@ -61,3 +73,15 @@
     </div>
 
 </div>
+
+<script>
+        menu_btn = document.querySelector(".menu_btn");
+        nav_sec = document.querySelector(".nav")
+        exit_btn = document.querySelector(".exit i")
+        menu_btn.addEventListener('click', ()=>{
+            nav_sec.style.display = "flex";
+        });
+        exit_btn.addEventListener('click', ()=>{
+            nav_sec.style.display = "none";
+        });           
+</script>

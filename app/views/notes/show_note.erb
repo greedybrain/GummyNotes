@@ -1,21 +1,82 @@
-    <link rel="stylesheet" type="text/css" href="<%= url("/css/show_styles.css") %>"/>
+    <link rel="stylesheet" type="text/css" href="<%= url("/css/sass/dashboard_styles.css") %>"/>
 </head>
 <body>
+<div class="wrapper">
+    <div class="glance">
+        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= current_user.name %></h3>
+        <% if current_user.gummy_notes.empty? %>
+            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
+        <% else %>
+            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
+        <% end %>
 
-<div class="show-wrapper">
-
-    <div class="show-content" style="border: 1px solid <%= @color %>; background-color: <%= @color %>">
-        <h1><%= @note.title %></h1>
-        <p><%= @note.content %></p>
-        <form action="/account/notes/<%= @note.id %>" method="POST">
-
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <div class="buttons">
-                <button class="crumble-btn" type="submit">Crumble</button>
-                <a href="/account/notes/<%= @note.id %>/edit">Edit</a>
+        <% if current_user.trash.gummy_notes.empty? %>
+            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> Trash Empty </h4>
+        <% else %>
+            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= current_user.trash.gummy_notes.length %> </h4>
+        <% end %>
+        
+    </div>
+    <% if current_user.gummy_notes.empty? %>
+        <div class="first-note-wrapper">
+            <p class="first-note"><a href="/account/notes/new">Create your first Gummy Note now</a></p>
+            <div class="placeholder">
+                <i class="fas fa-sticky-note"></i>
             </div>
-        </form>
-        <img src="/public/images/bulletin_board.png" alt="">
+        </div>
+    <% else %>
+        <div class="all-notes-wrapper">
+            <% current_user.gummy_notes.reverse.each do |note| %>
+                <div class="note" style="background-color: <%= note.color %>">
+                    <% if note.title.length > 10 %>
+                        <h1 class="note-title"><%= note.title[0..10] %>...</h1>
+                    <% else %>
+                        <h1 class="note-title"><%= note.title %></h1>
+                    <% end %>
+                    <% if note.content.length > 100 %>
+                        <p class="note-content"><%= note.content[0, 100] %>...</p>
+                    <% else %>
+                        <p class="note-content"><%= note.content %></p>
+                    <% end %>
+                    <div class="buttons">
+                        <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
+                        <a class="btn" href="/account/notes/<%= note.id %>/edit"><button class="note-edit"><i class="fas fa-pencil-alt form-icons"></i></button></a>
+                    
+                        <form action="/account/notes/<%= note.id %>"method="POST">
+                            <input id="hidden"type="hidden"name="_method"value="DELETE">
+                            <button class="note-delete btn"type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            <% end %> 
+        </div>
+    <% end %> 
+    
+    <div class="nav">
+        <div class="logout icon-wrappers"><p>Logout</p><br><a href="/logout"><i class="fas fa-sign-out-alt fa-2x" style="color: #f0c400"></i></a></div>
+        <div class="home icon-wrappers"><p>Home</p><br><a><i class="fas fa-home fa-8x" style="color: #d35bbf;"></i></a></div>
+        <div class="settings icon-wrappers"><p>Settings</p><br><a href="/account/settings"><i class="fas fa-cog fa-2x" style="color: #98e203"></i></a></div>
+        <div class="create icon-wrappers"><p>New</p><br><a href="/account/notes/new"><i class="fas fa-plus fa-2x" style="color: #00ccff;"></i></a></div>
+        <div class="trash icon-wrappers"><p>Trash</p><br><a href="/account/trash/notes"><i class="fas fa-trash-alt fa-2x" style="color: #fff"></i></a></div>
+    </div>
+
+    <div class="overlay_modal">
+        <div class="show_content" style="border: 1px solid <%= @color %>; background-color: <%= @color %>">
+            <div class="header_and_exit">
+                <h1><%= @note.title %></h1>
+
+                <a href="/account/home"><span class="exit">&times;</span></a>
+            </div>
+            <p><%= @note.content %></p>
+            <form action="/account/notes/<%= @note.id %>" method="POST">
+
+                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                <div class="buttons">
+                    <button class="crumble-btn" type="submit">Crumble</button>
+                    <a href="/account/notes/<%= @note.id %>/edit">Edit</a>
+                </div>
+            </form>
+        </div>
     </div>
 
 </div>

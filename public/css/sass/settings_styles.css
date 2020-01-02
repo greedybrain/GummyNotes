@@ -1,0 +1,103 @@
+div.wrapper {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../../images/settings_image.jpeg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/settings_image.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+}
+
+div.wrapper div.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #5e5e5ec9;
+  -webkit-box-shadow: -5px 2px 15px -2px #7d7d7d;
+  box-shadow: -5px 2px 15px -2px #7d7d7d;
+  min-width: 190px;
+  max-width: 300px;
+}
+
+div.wrapper div.nav div.home,
+div.wrapper div.nav div.logout,
+div.wrapper div.nav div.create,
+div.wrapper div.nav div.trash,
+div.wrapper div.nav div.settings {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+div.wrapper div.nav div.home a i,
+div.wrapper div.nav div.logout a i,
+div.wrapper div.nav div.create a i,
+div.wrapper div.nav div.trash a i,
+div.wrapper div.nav div.settings a i {
+  opacity: 1;
+  -webkit-transition: opacity, ease-in, .5s;
+  transition: opacity, ease-in, .5s;
+}
+
+div.wrapper div.nav div.home a i:hover,
+div.wrapper div.nav div.logout a i:hover,
+div.wrapper div.nav div.create a i:hover,
+div.wrapper div.nav div.trash a i:hover {
+  opacity: 0.7;
+}
+
+div.wrapper div.nav div.logout a i {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+div.wrapper div.nav div.icon-wrappers {
+  text-align: center;
+}
+
+div.wrapper div.nav div.icon-wrappers p {
+  color: #fff;
+}
+
+div.wrapper div.delete-account {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+div.wrapper div.delete-account button {
+  font-size: 1.3rem;
+  color: #fff;
+  border: 0;
+  padding: 20px 30px;
+  border-radius: 50px;
+  background-color: #ff0000;
+  -webkit-transition: background-color, ease-in, .7s;
+  transition: background-color, ease-in, .7s;
+  width: 400px;
+  cursor: pointer;
+  outline: none;
+}
+
+div.wrapper div.delete-account button:hover {
+  border: 0;
+  -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+}
+
+div.wrapper div.delete-account button i {
+  margin-right: 20px;
+}
+/*# sourceMappingURL=settings_styles.css.map */

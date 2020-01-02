@@ -1,10 +1,15 @@
 class TrashController < ApplicationController
 
     get "/account/trash/notes" do 
-        if logged_in?
-            @trash_notes = current_user.trash.gummy_notes
-            erb :"/notes/trash/note_trash"
-        end
+        all_notes_in_trash
+    end
+
+    post "/account/notes/:id" do
+        added_trash
+    end
+
+    delete "/account/notes/trash" do 
+        empty_trash_bin
     end
 
 end

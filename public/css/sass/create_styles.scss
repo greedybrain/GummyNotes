@@ -1,0 +1,169 @@
+div.create-wrapper {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../images/create_image.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    // border: 1px solid red;
+
+    div.nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #5e5e5ec9;
+        -webkit-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        -moz-box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        box-shadow: -5px 2px 15px -2px rgba(125, 125, 125, 1);
+        min-width: 190px;
+        max-width: 300px;
+
+        div.home,
+        div.logout,
+        div.create,
+        div.trash,
+        div.settings {
+            align-self: center;
+
+            a i {
+                opacity: 1;
+                transition: opacity, ease-in, .5s;
+            }
+        }
+
+        div.logout a i {
+            transform: rotate(-180deg);
+        }
+
+
+
+        div.home a i:hover,
+        div.logout a i:hover,
+        div.settings a i:hover,
+        div.trash a i:hover {
+            opacity: 0.7;
+        }
+
+        div.icon-wrappers {
+            text-align: center;
+
+            p {
+                color: #fff;
+            }
+        }
+    }
+
+    div.form-info {
+        border-radius: 10px;
+        padding: 50px 60px;
+        color: #fff;
+        width: 400px;
+        height: 75vh;
+        border: 0;
+        align-self: center;
+        justify-self: center;
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+
+            span.green {
+                color: #98e203;
+            }
+
+            span.blue {
+                color: #03ccf0;
+            }
+
+            span.pink {
+                color: #d35bbf;
+            }
+        }
+
+        form {
+            .form-icons {
+                color: #fff;
+                float: left;
+                text-align: center;
+                font-size: 1.4rem;
+                position: relative;
+                left: 10px;
+                top: 8px;
+            }
+
+            fieldset.input-wrapper {
+                width: 100%;
+                border-radius: 5px;
+                border: 0;
+                background-color: #98e203;
+
+                input {
+                    height: 40px;
+                    width: 85%;
+                    outline: none;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    border: 0;
+                    float: right;
+                    padding-left: 10px;
+                    font-size: 1rem;
+                }
+            }
+
+            fieldset.ta-wrapper {
+                width: 100%;
+                border-radius: 5px;
+                border: 0;
+                background-color: #98e203;
+
+                i.fa-pencil-alt {
+                    margin-top: 40px;
+                    transform: rotate(-90deg);
+                }
+
+                textarea {
+                    width: 85%;
+                    height: 100%;
+                    outline: none;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    border: 1px solid #cecbcb;
+                    float: right;
+                    padding: 10px 10px 0;
+                    padding-left: 10px;
+                    font-size: 1rem;
+                }
+            }
+
+            div.color-picker {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 15px;
+            }
+
+            button {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                background-color: transparent;
+                border: 1px solid #fff;
+                color: #fff;
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+                transition: background-color, ease-in, 0.5s;
+                margin: 20px 0 10px 0;
+                outline: none;
+
+                &:hover {
+                    background-color: #fff;
+                    color: #98e203;
+                }
+            }
+        }
+
+
+    }
+}

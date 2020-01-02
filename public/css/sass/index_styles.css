@@ -1,0 +1,132 @@
+/* INDEX HEADER SECTION */
+header {
+  height: 4vh;
+  text-align: right;
+}
+
+header nav ul li a {
+  display: inline-block;
+  color: #f0c400;
+  padding: 10px 20px 0 0;
+  cursor: pointer;
+}
+
+header nav ul li a:hover {
+  opacity: .8;
+}
+
+/* SECTION A  */
+section.section-a {
+  width: 100%;
+  height: 96vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid #cacaca;
+  -webkit-box-shadow: 0 2px 3px 0 #dbdada;
+          box-shadow: 0 2px 3px 0 #dbdada;
+  margin-bottom: 50px;
+  /* LOGO AREA  */
+  /* INDEX FORM BUTTONS  */
+}
+
+section.section-a div.logo-area {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.section-a div.logo-area img {
+  display: block;
+  width: 80%;
+  max-width: 600px;
+}
+
+section.section-a h2.tag {
+  margin: 30px 0;
+}
+
+section.section-a .i-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 8px 0 #aaaaaa;
+          box-shadow: 0 3px 8px 0 #aaaaaa;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+section.section-a .i-btn:hover {
+  opacity: 0.8;
+}
+
+section.section-a .i-btn:nth-child(1) {
+  background-color: #98e203;
+  outline: none;
+  border: 1px solid #98e203;
+}
+
+section.section-a .i-btn:nth-child(2) {
+  background-color: #03ccf0;
+  outline: none;
+  border: 1px solid #03ccf0;
+}
+
+/* SECTION B */
+section.section-b {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 30px 0;
+}
+
+section.section-b div.learn-item {
+  width: 75%;
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+section.section-b div.learn-item h2 {
+  margin-bottom: 10px;
+}
+
+section.section-b div.learn-item p {
+  line-height: 1.7;
+}
+
+section.section-b span.pink {
+  color: #fc6fe4;
+}
+
+section.section-b span.blue {
+  color: #03ccf0;
+}
+/*# sourceMappingURL=index_styles.css.map */

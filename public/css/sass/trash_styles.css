@@ -1,0 +1,198 @@
+div.wrapper {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../../images/trash.jpeg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/trash.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+div.wrapper div.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #5e5e5ec9;
+  -webkit-box-shadow: -5px 2px 15px -2px #7d7d7d;
+  box-shadow: -5px 2px 15px -2px #7d7d7d;
+  min-width: 190px;
+  max-width: 300px;
+}
+
+div.wrapper div.nav div.home,
+div.wrapper div.nav div.logout,
+div.wrapper div.nav div.create,
+div.wrapper div.nav div.trash,
+div.wrapper div.nav div.settings {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+div.wrapper div.nav div.home a i,
+div.wrapper div.nav div.logout a i,
+div.wrapper div.nav div.create a i,
+div.wrapper div.nav div.trash a i,
+div.wrapper div.nav div.settings a i {
+  opacity: 1;
+  -webkit-transition: opacity, ease-in, .5s;
+  transition: opacity, ease-in, .5s;
+}
+
+div.wrapper div.nav div.home a i:hover,
+div.wrapper div.nav div.logout a i:hover,
+div.wrapper div.nav div.create a i:hover {
+  opacity: 0.7;
+}
+
+div.wrapper div.nav div.logout a i {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+div.wrapper div.nav div.icon-wrappers {
+  text-align: center;
+}
+
+div.wrapper div.nav div.icon-wrappers p {
+  color: #fff;
+}
+
+div.wrapper div.all-notes-wrapper {
+  min-width: 450px;
+  margin: 35px 25px 0 25px;
+  padding-bottom: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 210px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+div.wrapper div.all-notes-wrapper div.note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  position: relative;
+  -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+  font-family: 'Caveat', cursive;
+  -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+  transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
+}
+
+div.wrapper div.all-notes-wrapper div.note:hover {
+  -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+}
+
+div.wrapper div.all-notes-wrapper div.note .note-title {
+  overflow: hidden;
+  font-size: 1.7rem;
+  text-decoration: underline;
+}
+
+div.wrapper div.all-notes-wrapper div.note .note-title,
+div.wrapper div.all-notes-wrapper div.note p.note-content {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #333;
+  text-shadow: 0px 0px 26px #444444;
+}
+
+div.wrapper div.all-notes-wrapper div.note p.note-content {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 10px;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons * {
+  padding: 3px;
+  margin: 0 3px;
+  outline: none;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons form button.note-restore,
+div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-edit,
+div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-details {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons i {
+  font-size: 1.5rem;
+  color: #fff;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: ease-in, .7s, -webkit-transform;
+  transition: ease-in, .7s, -webkit-transform;
+  transition: transform, ease-in, .7s;
+  transition: transform, ease-in, .7s, -webkit-transform;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons i:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+div.wrapper div.all-notes-wrapper div.note p.restore-tooltip {
+  display: none;
+  width: 100px;
+  position: absolute;
+  font-size: .9rem;
+  z-index: 100;
+  border: 1px solid #333;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #333;
+  background-color: #fff;
+  -webkit-transition: background-color, color, ease-in, .5s;
+  transition: background-color, color, ease-in, .5s;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.over {
+  display: inline-block;
+  padding: 0;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.hover .over:hover p.restore-tooltip {
+  display: inline-block;
+  color: #fff;
+  background-color: #333;
+}
+
+div.wrapper button.delete {
+  padding: 10px 20px;
+  color: #333;
+  position: fixed;
+}
+/*# sourceMappingURL=trash_styles.css.map */

@@ -1,0 +1,737 @@
+div.wrapper {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  background-color: #fff;
+}
+
+div.wrapper div.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #333;
+  -webkit-box-shadow: -5px 2px 15px -2px #7d7d7d;
+  box-shadow: -5px 2px 15px -2px #7d7d7d;
+  min-width: 190px;
+  max-width: 400px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  height: 100%;
+}
+
+div.wrapper div.nav div.exit {
+  display: none;
+}
+
+div.wrapper div.nav div.logout,
+div.wrapper div.nav div.create,
+div.wrapper div.nav div.trash,
+div.wrapper div.nav div.settings {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+div.wrapper div.nav div.logout a i,
+div.wrapper div.nav div.create a i,
+div.wrapper div.nav div.trash a i,
+div.wrapper div.nav div.settings a i {
+  opacity: 1;
+  -webkit-transition: opacity, ease-in, .5s;
+  transition: opacity, ease-in, .5s;
+}
+
+div.wrapper div.nav div.logout a i:hover,
+div.wrapper div.nav div.create a i:hover,
+div.wrapper div.nav div.trash a i:hover,
+div.wrapper div.nav div.settings a i:hover {
+  opacity: 0.5;
+}
+
+div.wrapper div.nav div.icon-wrappers {
+  text-align: center;
+}
+
+div.wrapper div.nav div.icon-wrappers p {
+  color: #fff;
+}
+
+div.wrapper div.glance {
+  min-width: 190px;
+  padding: 25px 0 0 30px;
+  border-right: 1px solid #e9e9e9;
+}
+
+div.wrapper div.glance h3.dash {
+  color: #908d90;
+  margin-bottom: 20px;
+}
+
+div.wrapper div.glance h4.dash {
+  color: #908d90;
+  margin-bottom: 10px;
+}
+
+div.wrapper div.glance div.menu_btn {
+  display: none;
+}
+
+div.wrapper div.glance div.menu_btn div.bar1,
+div.wrapper div.glance div.menu_btn div.bar2,
+div.wrapper div.glance div.menu_btn div.bar3 {
+  height: 3px;
+  border: 2px solid #333;
+  color: #333;
+  margin-bottom: 3px;
+  width: 30px;
+}
+
+div.wrapper i.sticky:hover,
+div.wrapper .fa-trash-alt:hover {
+  opacity: 0.7;
+}
+
+div.wrapper div.all-notes-wrapper {
+  margin: 35px 25px 0 25px;
+  padding-bottom: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 210px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+div.wrapper div.all-notes-wrapper div.note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  position: relative;
+  -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+  font-family: 'Caveat', cursive;
+  -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+  transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
+}
+
+div.wrapper div.all-notes-wrapper div.note:hover {
+  -webkit-box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -7px 120px -19px rgba(0, 0, 0, 0.39);
+}
+
+div.wrapper div.all-notes-wrapper div.note .note-title {
+  overflow: hidden;
+  font-size: 1.7rem;
+  text-decoration: underline;
+}
+
+div.wrapper div.all-notes-wrapper div.note .note-title,
+div.wrapper div.all-notes-wrapper div.note p.note-content {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #333;
+  text-shadow: 0px 0px 26px #444444;
+}
+
+div.wrapper div.all-notes-wrapper div.note p.note-content {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 10px;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons * {
+  padding: 3px;
+  margin: 0 3px;
+  outline: none;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons form button.note-delete,
+div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-edit,
+div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-details {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons i {
+  font-size: 1rem;
+  color: #fff;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: ease-in, .5s, -webkit-transform;
+  transition: ease-in, .5s, -webkit-transform;
+  transition: transform, ease-in, .5s;
+  transition: transform, ease-in, .5s, -webkit-transform;
+}
+
+div.wrapper div.all-notes-wrapper div.note div.buttons i:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+div.wrapper div.first-note-wrapper {
+  justify-self: center;
+  min-width: 425px;
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.wrapper div.first-note-wrapper p.first-note {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+div.wrapper div.first-note-wrapper p.first-note a {
+  font-size: 1.3rem;
+  color: #fd5f5f;
+  border: 1px solid #fd5f5f;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  -webkit-transition: background-color, ease-in, .5s;
+  transition: background-color, ease-in, .5s;
+}
+
+div.wrapper div.first-note-wrapper p.first-note a:hover {
+  background-color: #fd5f5f;
+  color: #fff;
+}
+
+div.wrapper div.first-note-wrapper div.placeholder {
+  margin-top: 180px;
+  color: #cfcfcf;
+}
+
+div.wrapper div.first-note-wrapper div.placeholder i {
+  font-size: 10rem;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+div.wrapper div.overlay_modal {
+  position: absolute;
+  background-color: #bbbbbb69;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.wrapper div.overlay_modal div.show_content {
+  width: 400px;
+  height: 50vh;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+  -webkit-box-shadow: 0px 7px 28px -6px #787878;
+  box-shadow: 0px 7px 28px -6px #787878;
+  transition: -webkit-box-shadow, box-shadow, ease-in, .5s;
+  -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+}
+
+div.wrapper div.overlay_modal div.show_content div.header_and_exit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.wrapper div.overlay_modal div.show_content div.header_and_exit h1 {
+  color: #333;
+}
+
+div.wrapper div.overlay_modal div.show_content div.header_and_exit a {
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 20px;
+  color: #333;
+}
+
+div.wrapper div.overlay_modal div.show_content div.header_and_exit a span.exit {
+  display: block;
+  font-size: 3rem;
+}
+
+div.wrapper div.overlay_modal div.show_content p {
+  max-width: 425px;
+}
+
+div.wrapper div.overlay_modal div.show_content h1,
+div.wrapper div.overlay_modal div.show_content p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+}
+
+div.wrapper div.overlay_modal div.show_content .buttons {
+  margin-top: 30px;
+}
+
+div.wrapper div.overlay_modal div.show_content .buttons .crumble-btn {
+  border: 1px solid #333;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #333;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity, ease-in, .5s;
+  transition: opacity, ease-in, .5s;
+}
+
+div.wrapper div.overlay_modal div.show_content .buttons .crumble-btn:hover {
+  opacity: .5;
+}
+
+div.wrapper div.overlay_modal div.show_content .buttons a {
+  border: 1px solid #333;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #333;
+  letter-spacing: 1px;
+  opacity: 1;
+  -webkit-transition: opacity, ease-in, .5s;
+  transition: opacity, ease-in, .5s;
+}
+
+div.wrapper div.overlay_modal div.show_content .buttons a:hover {
+  opacity: .5;
+}
+
+@media (max-width: 768px) {
+  div.wrapper {
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    background-color: #fff;
+  }
+  div.wrapper div.nav {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: #333;
+    width: 25%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    height: 100%;
+  }
+  div.wrapper div.nav div.exit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  div.wrapper div.nav div.exit i {
+    color: #fff;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  div.wrapper div.nav div.logout,
+  div.wrapper div.nav div.create,
+  div.wrapper div.nav div.trash,
+  div.wrapper div.nav div.settings {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  div.wrapper div.nav div.logout a i,
+  div.wrapper div.nav div.create a i,
+  div.wrapper div.nav div.trash a i,
+  div.wrapper div.nav div.settings a i {
+    opacity: 1;
+    -webkit-transition: opacity, ease-in, .5s;
+    transition: opacity, ease-in, .5s;
+  }
+  div.wrapper div.nav div.icon-wrappers {
+    text-align: center;
+  }
+  div.wrapper div.nav div.icon-wrappers p {
+    color: #fff;
+  }
+  div.wrapper div.glance {
+    padding: 25px 30px 0 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  div.wrapper div.glance h3.dash {
+    color: #908d90;
+    margin-bottom: 20px;
+  }
+  div.wrapper div.glance div.stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div.wrapper div.glance div.stats h4 {
+    margin: 0 10px;
+  }
+  div.wrapper div.glance h4.dash {
+    color: #908d90;
+    margin-bottom: 10px;
+  }
+  div.wrapper div.glance div.menu_btn {
+    display: block;
+    padding-right: 30px;
+    cursor: pointer;
+  }
+  div.wrapper div.glance div.menu_btn div.bar1,
+  div.wrapper div.glance div.menu_btn div.bar2,
+  div.wrapper div.glance div.menu_btn div.bar3 {
+    height: 3px;
+    border: 2px solid #7e7e7e;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    width: 30px;
+  }
+  div.wrapper div.all-notes-wrapper {
+    margin: 100px 25px 0 25px;
+    padding-bottom: 20px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 250px;
+    gap: 20px;
+  }
+  div.wrapper div.all-notes-wrapper div.note {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 15px;
+    position: relative;
+    -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    font-family: 'Caveat', cursive;
+    -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
+  }
+  div.wrapper div.all-notes-wrapper div.note .note-title {
+    overflow: hidden;
+    font-size: 1.7rem;
+    text-decoration: underline;
+  }
+  div.wrapper div.all-notes-wrapper div.note .note-title,
+  div.wrapper div.all-notes-wrapper div.note p.note-content {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color: #333;
+    text-shadow: 0px 0px 26px #444444;
+  }
+  div.wrapper div.all-notes-wrapper div.note p.note-content {
+    margin-top: 15px;
+    font-size: 1.2rem;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding: 10px;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons * {
+    padding: 3px;
+    margin: 0 3px;
+    outline: none;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons form button.note-delete,
+  div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-edit,
+  div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-details {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons i {
+    font-size: 1rem;
+    color: #fff;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: ease-in, .5s, -webkit-transform;
+    transition: ease-in, .5s, -webkit-transform;
+    transition: transform, ease-in, .5s;
+    transition: transform, ease-in, .5s, -webkit-transform;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons i:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 550px) {
+  div.wrapper {
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    background-color: #fff;
+  }
+  div.wrapper div.nav {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: #333;
+    -webkit-box-shadow: -5px 2px 15px -2px #7d7d7d;
+    box-shadow: -5px 2px 15px -2px #7d7d7d;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    height: 100%;
+  }
+  div.wrapper div.nav div.exit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  div.wrapper div.nav div.exit i {
+    color: #fff;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  div.wrapper div.nav div.logout,
+  div.wrapper div.nav div.create,
+  div.wrapper div.nav div.trash,
+  div.wrapper div.nav div.settings {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  div.wrapper div.nav div.logout a i,
+  div.wrapper div.nav div.create a i,
+  div.wrapper div.nav div.trash a i,
+  div.wrapper div.nav div.settings a i {
+    opacity: 1;
+    -webkit-transition: opacity, ease-in, .5s;
+    transition: opacity, ease-in, .5s;
+  }
+  div.wrapper div.nav div.icon-wrappers {
+    text-align: center;
+  }
+  div.wrapper div.nav div.icon-wrappers p {
+    color: #fff;
+  }
+  div.wrapper div.glance {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  div.wrapper div.glance h3.dash {
+    color: #908d90;
+    margin-bottom: 20px;
+    font-size: .8rem;
+  }
+  div.wrapper div.glance div.stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  div.wrapper div.glance div.stats h4 {
+    margin: 0 10px;
+    font-size: .8rem;
+  }
+  div.wrapper div.glance h4.dash {
+    color: #908d90;
+    margin-bottom: 10px;
+  }
+  div.wrapper div.glance div.menu_btn {
+    display: block;
+    padding-right: 30px;
+    cursor: pointer;
+  }
+  div.wrapper div.glance div.menu_btn div.bar1,
+  div.wrapper div.glance div.menu_btn div.bar2,
+  div.wrapper div.glance div.menu_btn div.bar3 {
+    height: 3px;
+    border: 2px solid #7e7e7e;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    width: 30px;
+  }
+  div.wrapper div.all-notes-wrapper {
+    margin: 100px 0 0 0;
+    padding-bottom: 20px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  div.wrapper div.all-notes-wrapper div.note {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 15px;
+    position: relative;
+    -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
+    font-family: 'Caveat', cursive;
+    -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
+    transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
+  }
+  div.wrapper div.all-notes-wrapper div.note .note-title {
+    overflow: hidden;
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+  div.wrapper div.all-notes-wrapper div.note .note-title,
+  div.wrapper div.all-notes-wrapper div.note p.note-content {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color: #333;
+    text-shadow: 0px 0px 26px #444444;
+  }
+  div.wrapper div.all-notes-wrapper div.note p.note-content {
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding: 10px;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons * {
+    padding: 3px;
+    margin: 0 3px;
+    outline: none;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons form button.note-delete,
+  div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-edit,
+  div.wrapper div.all-notes-wrapper div.note div.buttons a button.note-details {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  div.wrapper div.all-notes-wrapper div.note div.buttons i {
+    font-size: .9rem;
+    color: #fff;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: ease-in, .5s, -webkit-transform;
+    transition: ease-in, .5s, -webkit-transform;
+    transition: transform, ease-in, .5s;
+    transition: transform, ease-in, .5s, -webkit-transform;
+  }
+}
+/*# sourceMappingURL=dashboard_styles.css.map */
