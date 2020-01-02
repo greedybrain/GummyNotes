@@ -9,9 +9,9 @@ gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
 gem 'sass'
-gem 'sqlite3'
 
 group :development do
+	gem 'sqlite3', '~> 1.3.13'
 	gem 'capybara'
 	gem 'shotgun'
 	gem 'pry'

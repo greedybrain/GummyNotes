@@ -21,4 +21,4 @@ Dir[File.join(File.dirname(__FILE__), "../app/models", "*.rb")].each {|f| requir
 Dir[File.join(File.dirname(__FILE__), "../app/controllers", "*.rb")].each {|f| require f}
 Dir[File.join(File.dirname(__FILE__), "/public/css", "*.css")].each {|f| require f}
 
-require_all "app"
+# require_all "app"
