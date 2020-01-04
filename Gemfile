@@ -11,7 +11,7 @@ gem 'sinatra-activerecord'
 gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
-gem 'sass'
+# gem 'sass'
 
 group :development do
 	gem 'capybara'
