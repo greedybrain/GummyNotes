@@ -33,12 +33,12 @@
             </div>
         </div>
     <% else %>
-        <div class="first-note-wrapper">
+        <%# <div class="first-note-wrapper">
             <p class="first-note"><a href="/account/notes/new">Create your first Gummy Note now</a></p>
             <div class="placeholder">
                 <i class="fas fa-sticky-note"></i>
             </div>
-        </div>
+        </div> %>
         
         <div class="all-notes-wrapper">
             <% current_user.gummy_notes.reverse.each do |note| %>
