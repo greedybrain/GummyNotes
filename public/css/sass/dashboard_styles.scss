@@ -677,5 +677,43 @@ div.wrapper {
                 }
             }
         }
+
+        div.first-note-wrapper {
+            justify-self: center;
+            min-width: 425px;
+            margin-top: 35px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+            p.first-note {
+                justify-self: start;
+
+                a {
+                    font-size: 1.3rem;
+                    color: #fd5f5f;
+                    border: 1px solid #fd5f5f;
+                    padding: 10px 20px;
+                    border-radius: 50px;
+                    background-color: transparent;
+                    transition: background-color, ease-in, .5s;
+
+                    &:hover {
+                        background-color: #fd5f5f;
+                        color: #fff;
+                    }
+                }
+            }
+
+            div.placeholder {
+                margin-top: 180px;
+                color: #cfcfcf;
+
+                i {
+                    font-size: 10rem;
+                    transform: rotate(-10deg);
+                }
+            }
+        }
     }
 }
