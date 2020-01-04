@@ -177,7 +177,7 @@ class ApplicationController < Sinatra::Base
         
         # if users note then push edit
         def finish_edit
-            note = GummyNote.find_by(id: params[:id])
+            @note = GummyNote.find_by(id: params[:id])
             @note.title = params[:title]
             @note.content = params[:content]
             @note.color = params[:color]
