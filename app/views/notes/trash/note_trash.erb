@@ -16,7 +16,7 @@
     </div>
 
     <div class="all-notes-wrapper">
-        <% current_user.trash.gummy_notes.reverse.each do |note| %>
+        <% Helper.current_user(session).trash.gummy_notes.reverse.each do |note| %>
             <div class="note" style="background-color: <%= note.color %>">
                 <% if note.title.length > 10 %>
                     <h1 class="note-title"><%= note.title[0..10] %>...</h1>

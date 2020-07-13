@@ -1,4 +1,4 @@
-class CreateTrash < ActiveRecord::Migration[4.2]
+class CreateTrash < ActiveRecord::Migration
   
   def change
     create_table :trashes do |t|

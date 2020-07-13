@@ -1,21 +1,12 @@
 require './config/environment'
 
-# begin
-# 	fi_check_migration
+if ActiveRecord::Migrator.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
+end
 
-	# use Rack::MethodOverride
-	
-	# use TrashController
-	# use GummyNoteController
-	# run ApplicationController # or whatever the app controller module/class name you want eg. App
-# rescue ActiveRecord::PendingMigrationError => err
-# 	STDERR.puts err
-# 	exit 1
-# end
 use Rack::MethodOverride
-	
 use TrashController
 use GummyNoteController
+use UsersController
 run ApplicationController 
-
 

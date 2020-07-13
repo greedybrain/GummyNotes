@@ -1,5 +1,5 @@
-class AdddColorColumn < ActiveRecord::Migration[4.2]
-  
+class AdddColorColumn < ActiveRecord::Migration
+
   def change
     add_column :gummy_notes, :color, :string
   end

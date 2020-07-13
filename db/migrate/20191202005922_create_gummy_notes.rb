@@ -1,4 +1,4 @@
-class CreateGummyNotes < ActiveRecord::Migration[4.2]
+class CreateGummyNotes < ActiveRecord::Migration
   
   def change
     create_table :gummy_notes do |t|

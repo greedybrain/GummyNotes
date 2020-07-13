@@ -48,8 +48,8 @@ div.wrapper div.nav div.create a i,
 div.wrapper div.nav div.trash a i,
 div.wrapper div.nav div.settings a i {
   opacity: 1;
-  -webkit-transition: opacity, ease-in, .5s;
-  transition: opacity, ease-in, .5s;
+  -webkit-transition: opacity, ease-in, 0.5s;
+  transition: opacity, ease-in, 0.5s;
 }
 
 div.wrapper div.nav div.logout a i:hover,
@@ -126,7 +126,7 @@ div.wrapper div.all-notes-wrapper div.note {
   position: relative;
   -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
   box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
   box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
   transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
@@ -187,10 +187,10 @@ div.wrapper div.all-notes-wrapper div.note div.buttons i {
   color: #fff;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transition: ease-in, .5s, -webkit-transform;
-  transition: ease-in, .5s, -webkit-transform;
-  transition: transform, ease-in, .5s;
-  transition: transform, ease-in, .5s, -webkit-transform;
+  -webkit-transition: ease-in, 0.5s, -webkit-transform;
+  transition: ease-in, 0.5s, -webkit-transform;
+  transition: transform, ease-in, 0.5s;
+  transition: transform, ease-in, 0.5s, -webkit-transform;
 }
 
 div.wrapper div.all-notes-wrapper div.note div.buttons i:hover {
@@ -226,8 +226,8 @@ div.wrapper div.first-note-wrapper p.first-note a {
   padding: 10px 20px;
   border-radius: 50px;
   background-color: transparent;
-  -webkit-transition: background-color, ease-in, .5s;
-  transition: background-color, ease-in, .5s;
+  -webkit-transition: background-color, ease-in, 0.5s;
+  transition: background-color, ease-in, 0.5s;
 }
 
 div.wrapper div.first-note-wrapper p.first-note a:hover {
@@ -275,7 +275,7 @@ div.wrapper div.overlay_modal div.show_content {
       grid-template-rows: 1fr 2fr 1fr;
   -webkit-box-shadow: 0px 7px 28px -6px #787878;
   box-shadow: 0px 7px 28px -6px #787878;
-  transition: -webkit-box-shadow, box-shadow, ease-in, .5s;
+  transition: -webkit-box-shadow, box-shadow, ease-in, 0.5s;
   -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
   box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
 }
@@ -311,7 +311,7 @@ div.wrapper div.overlay_modal div.show_content p {
 
 div.wrapper div.overlay_modal div.show_content h1,
 div.wrapper div.overlay_modal div.show_content p {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   font-size: 1.5rem;
 }
 
@@ -331,12 +331,12 @@ div.wrapper div.overlay_modal div.show_content .buttons .crumble-btn {
   outline: none;
   cursor: pointer;
   opacity: 1;
-  -webkit-transition: opacity, ease-in, .5s;
-  transition: opacity, ease-in, .5s;
+  -webkit-transition: opacity, ease-in, 0.5s;
+  transition: opacity, ease-in, 0.5s;
 }
 
 div.wrapper div.overlay_modal div.show_content .buttons .crumble-btn:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 div.wrapper div.overlay_modal div.show_content .buttons a {
@@ -347,12 +347,12 @@ div.wrapper div.overlay_modal div.show_content .buttons a {
   color: #333;
   letter-spacing: 1px;
   opacity: 1;
-  -webkit-transition: opacity, ease-in, .5s;
-  transition: opacity, ease-in, .5s;
+  -webkit-transition: opacity, ease-in, 0.5s;
+  transition: opacity, ease-in, 0.5s;
 }
 
 div.wrapper div.overlay_modal div.show_content .buttons a:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {
@@ -409,8 +409,8 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
   div.wrapper div.nav div.trash a i,
   div.wrapper div.nav div.settings a i {
     opacity: 1;
-    -webkit-transition: opacity, ease-in, .5s;
-    transition: opacity, ease-in, .5s;
+    -webkit-transition: opacity, ease-in, 0.5s;
+    transition: opacity, ease-in, 0.5s;
   }
   div.wrapper div.nav div.icon-wrappers {
     text-align: center;
@@ -486,7 +486,7 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
     position: relative;
     -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
     box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
-    font-family: 'Caveat', cursive;
+    font-family: "Caveat", cursive;
     -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
     box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
     transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
@@ -535,10 +535,10 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
     color: #fff;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    -webkit-transition: ease-in, .5s, -webkit-transform;
-    transition: ease-in, .5s, -webkit-transform;
-    transition: transform, ease-in, .5s;
-    transition: transform, ease-in, .5s, -webkit-transform;
+    -webkit-transition: ease-in, 0.5s, -webkit-transform;
+    transition: ease-in, 0.5s, -webkit-transform;
+    transition: transform, ease-in, 0.5s;
+    transition: transform, ease-in, 0.5s, -webkit-transform;
   }
   div.wrapper div.all-notes-wrapper div.note div.buttons i:hover {
     -webkit-transform: rotate(360deg);
@@ -602,8 +602,8 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
   div.wrapper div.nav div.trash a i,
   div.wrapper div.nav div.settings a i {
     opacity: 1;
-    -webkit-transition: opacity, ease-in, .5s;
-    transition: opacity, ease-in, .5s;
+    -webkit-transition: opacity, ease-in, 0.5s;
+    transition: opacity, ease-in, 0.5s;
   }
   div.wrapper div.nav div.icon-wrappers {
     text-align: center;
@@ -628,7 +628,7 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
   div.wrapper div.glance h3.dash {
     color: #908d90;
     margin-bottom: 20px;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   div.wrapper div.glance div.stats {
     display: -webkit-box;
@@ -637,7 +637,7 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
   }
   div.wrapper div.glance div.stats h4 {
     margin: 0 10px;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   div.wrapper div.glance h4.dash {
     color: #908d90;
@@ -679,7 +679,7 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
     position: relative;
     -webkit-box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
     box-shadow: inset 0px -15px 59px -19px rgba(0, 0, 0, 0.39);
-    font-family: 'Caveat', cursive;
+    font-family: "Caveat", cursive;
     -webkit-box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
     box-shadow: 0px 11px 23px -12px rgba(0, 0, 0, 0.8);
     transition: -webkit-box-shadow, box-shadow, ease-in, 1s;
@@ -724,14 +724,14 @@ div.wrapper div.overlay_modal div.show_content .buttons a:hover {
     cursor: pointer;
   }
   div.wrapper div.all-notes-wrapper div.note div.buttons i {
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: #fff;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    -webkit-transition: ease-in, .5s, -webkit-transform;
-    transition: ease-in, .5s, -webkit-transform;
-    transition: transform, ease-in, .5s;
-    transition: transform, ease-in, .5s, -webkit-transform;
+    -webkit-transition: ease-in, 0.5s, -webkit-transform;
+    transition: ease-in, 0.5s, -webkit-transform;
+    transition: transform, ease-in, 0.5s;
+    transition: transform, ease-in, 0.5s, -webkit-transform;
   }
 }
 /*# sourceMappingURL=dashboard_styles.css.map */

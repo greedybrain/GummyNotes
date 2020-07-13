@@ -8,24 +8,24 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= current_user.name %></h3>
+        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= Helper.current_user(session).name %></h3>
         <div class="stats">
         
-            <% if current_user.gummy_notes.empty? %>
+            <% if Helper.current_user(session).gummy_notes.empty? %>
                 <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
             <% else %>
-                <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
+                <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= Helper.current_user(session).gummy_notes.length %></h4>
             <% end %>
 
-            <% if current_user.trash.gummy_notes.empty? %>
+            <% if Helper.current_user(session).trash.gummy_notes.empty? %>
                 <h4 class="dash trash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> Trash Empty </h4>
             <% else %>
-                <h4 class="dash trash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= current_user.trash.gummy_notes.length %> </h4>
+                <h4 class="dash trash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= Helper.current_user(session).trash.gummy_notes.length %> </h4>
             <% end %>
         </div>
         
     </div>
-    <% if current_user.gummy_notes.empty? %>
+    <% if Helper.current_user(session).gummy_notes.empty? %>
         <div class="first-note-wrapper">
             <p class="first-note"><a href="/account/notes/new">Create your first Gummy Note now</a></p>
             <div class="placeholder">
@@ -34,28 +34,54 @@
         </div>
     <% else %>
         <div class="all-notes-wrapper">
-            <% current_user.gummy_notes.reverse.each do |note| %>
-                <div class="note" style="background-color: <%= note.color %>">
-                    <% if note.title.length > 10 %>
-                        <h1 class="note-title"><%= note.title[0..10] %>...</h1>
-                    <% else %>
-                        <h1 class="note-title"><%= note.title %></h1>
-                    <% end %>
-                    <% if note.content.length > 100 %>
-                        <p class="note-content"><%= note.content[0, 100] %>...</p>
-                    <% else %>
-                        <p class="note-content"><%= note.content %></p>
-                    <% end %>
-                    <div class="buttons">
-                        <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
-                        <a class="btn" href="/account/notes/<%= note.id %>/edit"><button class="note-edit"><i class="fas fa-pencil-alt form-icons"></i></button></a>
-                    
-                        <form action="/account/notes/<%= note.id %>"method="POST">
-                            <input id="hidden"type="hidden"name="_method"value="DELETE">
-                            <button class="note-delete btn"type="submit"><i class="fas fa-trash-alt"></i></button>
-                        </form>
+            <% if @filter %>
+                <% @filter.reverse.each do |note| %>
+                    <div class="note" style="background-color: <%= note.color %>">
+                        <% if note.title.length > 10 %>
+                            <h1 class="note-title"><%= note.title[0..10] %>...</h1>
+                        <% else %>
+                            <h1 class="note-title"><%= note.title %></h1>
+                        <% end %>
+                        <% if note.content.length > 100 %>
+                            <p class="note-content"><%= note.content[0, 100] %>...</p>
+                        <% else %>
+                            <p class="note-content"><%= note.content %></p>
+                        <% end %>
+                        <div class="buttons">
+                            <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
+                            <a class="btn" href="/account/notes/<%= note.id %>/edit"><button class="note-edit"><i class="fas fa-pencil-alt form-icons"></i></button></a>
+                        
+                            <form action="/account/notes/<%= note.id %>"method="POST">
+                                <input id="hidden"type="hidden"name="_method"value="DELETE">
+                                <button class="note-delete btn"type="submit"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                <% end %> 
+            <% else%>
+                <% Helper.current_user(session).gummy_notes.reverse.each do |note| %>
+                    <div class="note" style="background-color: <%= note.color %>">
+                        <% if note.title.length > 10 %>
+                            <h1 class="note-title"><%= note.title[0..10] %>...</h1>
+                        <% else %>
+                            <h1 class="note-title"><%= note.title %></h1>
+                        <% end %>
+                        <% if note.content.length > 100 %>
+                            <p class="note-content"><%= note.content[0, 100] %>...</p>
+                        <% else %>
+                            <p class="note-content"><%= note.content %></p>
+                        <% end %>
+                        <div class="buttons">
+                            <a class="btn" href="/account/notes/<%= note.id %>"><button class="note-details"><i class="fas fa-info"></i></button></a>
+                            <a class="btn" href="/account/notes/<%= note.id %>/edit"><button class="note-edit"><i class="fas fa-pencil-alt form-icons"></i></button></a>
+                        
+                            <form action="/account/notes/<%= note.id %>"method="POST">
+                                <input id="hidden"type="hidden"name="_method"value="DELETE">
+                                <button class="note-delete btn"type="submit"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                <% end %>
             <% end %> 
         </div>
     <% end %> 

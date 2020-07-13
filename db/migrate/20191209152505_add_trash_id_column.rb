@@ -1,4 +1,4 @@
-class AddTrashIdColumn < ActiveRecord::Migration[4.2]
+class AddTrashIdColumn < ActiveRecord::Migration
   
   def change
     add_column :gummy_notes, :trash_id, :integer

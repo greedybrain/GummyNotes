@@ -4,6 +4,16 @@ class GummyNoteController < ApplicationController
     get "/account/home" do
         show_all_notes
     end
+
+    get "/account/home/search/:title" do
+        @gummy_notes = Helper.current_user(session).gummy_notes
+        @filter = []
+        @gummy_notes.each do |note|
+            @filter << note if note.title.include?(params[:title])
+        end
+        @filter
+        erb :"users/account_home"
+    end
     
     # CREATE 
     get "/account/notes/new" do

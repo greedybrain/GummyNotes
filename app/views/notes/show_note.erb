@@ -3,21 +3,21 @@
 <body>
 <div class="wrapper">
     <div class="glance">
-        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= current_user.name %></h3>
-        <% if current_user.gummy_notes.empty? %>
+        <h3 class="dash"><i class="fas fa-user" style="margin-right: 3px; color: #fd5f5f;"></i>  <%= Helper.current_user(session).name %></h3>
+        <% if Helper.current_user(session).gummy_notes.empty? %>
             <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> No Notes</h4>
         <% else %>
-            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= current_user.gummy_notes.length %></h4>
+            <h4 class="dash"><i class="fas fa-sticky-note sticky" style="margin-right: 5px; transform: rotate(-10deg); color: #98e203;"></i> <%= Helper.current_user(session).gummy_notes.length %></h4>
         <% end %>
 
-        <% if current_user.trash.gummy_notes.empty? %>
+        <% if Helper.current_user(session).trash.gummy_notes.empty? %>
             <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> Trash Empty </h4>
         <% else %>
-            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= current_user.trash.gummy_notes.length %> </h4>
+            <h4 class="dash"><a href="/account/trash/notes"><i class="fas fa-trash-alt" style="margin-right: 5px; color: #929292;"></i></a> <%= Helper.current_user(session).trash.gummy_notes.length %> </h4>
         <% end %>
         
     </div>
-    <% if current_user.gummy_notes.empty? %>
+    <% if Helper.current_user(session).gummy_notes.empty? %>
         <div class="first-note-wrapper">
             <p class="first-note"><a href="/account/notes/new">Create your first Gummy Note now</a></p>
             <div class="placeholder">
@@ -26,7 +26,7 @@
         </div>
     <% else %>
         <div class="all-notes-wrapper">
-            <% current_user.gummy_notes.reverse.each do |note| %>
+            <% Helper.current_user(session).gummy_notes.reverse.each do |note| %>
                 <div class="note" style="background-color: <%= note.color %>">
                     <% if note.title.length > 10 %>
                         <h1 class="note-title"><%= note.title[0..10] %>...</h1>
